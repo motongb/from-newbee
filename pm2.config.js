@@ -5,7 +5,8 @@ module.exports = {
             script: 'java',
             args: [
                 '-jar',
-                'target/newbee-mall.jar'
+                'target/newbee-mall.jar',
+                '--server.port=80'
             ],
             cwd: '.',
             interpreter: ''
