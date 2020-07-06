@@ -8,9 +8,7 @@
  */
 package ltd.newbee.mall.controller.common;
 
-import ltd.newbee.mall.common.Constants;
 import ltd.newbee.mall.config.ApiConfig;
-import ltd.newbee.mall.util.NewBeeMallUtils;
 import ltd.newbee.mall.util.Result;
 import ltd.newbee.mall.util.ResultGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -65,7 +62,7 @@ public class UploadController {
             }
             file.transferTo(destFile);
             Result resultSuccess = ResultGenerator.genSuccessResult();
-            resultSuccess.setData(NewBeeMallUtils.getHost(new URI(httpServletRequest.getRequestURL() + "")) + "/upload/" + newFileName);
+            resultSuccess.setData("/goods-img/" + newFileName);
             return resultSuccess;
         } catch (IOException e) {
             e.printStackTrace();
