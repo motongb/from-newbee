@@ -6,7 +6,8 @@ module.exports = {
             args: [
                 '-jar',
                 'target/newbee-mall.jar',
-                '--server.port=8000'
+                '--server.port=8000',
+                '--upload.path=/root/upload/'
             ],
             cwd: '.',
             interpreter: ''
